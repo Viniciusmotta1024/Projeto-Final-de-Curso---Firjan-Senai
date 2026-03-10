@@ -1,18 +1,19 @@
-import dao.TarefaDAO;
-import model.Tarefa;
+import controller.ApiServidor;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        TarefaDAO dao = new TarefaDAO();
+        try {
 
-        Tarefa tarefa = new Tarefa();
-        tarefa.setTitulo("Estudar API");
-        tarefa.setDescricao("Finalizar CRUD");
-        tarefa.setStatus("Pendente");
+            ApiServidor.iniciar();
 
-        dao.criarTarefa(tarefa);
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
 
     }
+
 }
