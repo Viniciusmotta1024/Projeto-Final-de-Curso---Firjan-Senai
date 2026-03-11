@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Controle de Tarefas</title>
 <link rel="stylesheet" href="style.css">
 </head>
@@ -14,36 +13,41 @@
 
 <h1>Controle de Tarefas</h1>
 
-<section class="card">
+<section class="form">
 
 <h2>Nova Tarefa</h2>
 
-<div class="form">
-
 <input type="text" id="titulo" placeholder="Título da tarefa">
-<input type="text" id="descricao" placeholder="Descrição">
 
-<button onclick="criarTarefa()" class="btn-criar">
-Criar Tarefa
-</button>
+<textarea id="descricao" placeholder="Descrição da tarefa"></textarea>
+
+<select id="prioridade">
+<option value="">Prioridade</option>
+<option value="BAIXA">Baixa</option>
+<option value="MEDIA">Média</option>
+<option value="ALTA">Alta</option>
+</select>
+
+<input type="date" id="dataLimite">
+
+<button class="criar" onclick="criarTarefa()">Criar Tarefa</button>
+
+</section>
+
+<section class="lista">
+
+<h2>Tarefas</h2>
+
+<button class="atualizar" onclick="listarTarefas()">Atualizar Lista</button>
+
+<div id="tarefas"></div>
+
+</section>
 
 </div>
 
-</section>
-
-
-<section class="card">
-
-<h2>Lista de Tarefas</h2>
-
-<button onclick="carregarTarefas()" class="btn-atualizar">
-Atualizar Lista
-</button>
-
-<ul id="listaTarefas"></ul>
-
-</section>
-
+<div id="popup" class="popup hidden">
+<span id="popup-msg"></span>
 </div>
 
 <script src="script.js"></script>
